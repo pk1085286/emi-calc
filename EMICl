@@ -1,0 +1,23 @@
+principal = float(input("Enter the loan amount: "))
+interest_rate = float(input("Enter the interest rate (in percentage): "))
+tenure = int(input("Enter the loan tenure (in years): "))
+
+# Convert interest rate from percentage to decimal
+interest_rate = interest_rate / 100.0
+
+# Calculate the monthly interest rate
+monthly_rate = interest_rate / 12.0
+
+# Calculate the total number of months
+total_months = tenure * 12
+
+# Calculate the EMI
+emi = (principal * monthly_rate * (1 + monthly_rate) ** total_months) / ((1 + monthly_rate) ** total_months - 1)
+
+# Print the EMI
+print(f"Your monthly EMI is: {emi:.2f}")
+
+Enter the loan amount: 100000
+Enter the interest rate (in percentage): 10
+Enter the loan tenure (in years): 5
+Your monthly EMI is: 2121.22
